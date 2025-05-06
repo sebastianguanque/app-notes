@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es" dir="ltr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.2.0/remixicon.min.css"
+      integrity="sha512-MqL4+Io386IOPMKKyplKII0pVW5e+kb+PI/I3N87G3fHIfrgNNsRpzIXEi+0MQC0sR9xZNqZqCYVcC61fL5+Vg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <script src="app.js" defer></script>
+    <title>Crear Notas</title>
+  </head>
+  <body>
+    <div class="popup-box">
+      <div class="popup">
+        <div class="content">
+          <header>
+            <p></p>
+            <i class="ri-close-line"></i>
+          </header>
+          <form action="#">
+            <div class="row title">
+              <label>Título</label>
+              <input
+                type="text"
+                spellcheck="false"
+                placeholder="Escribe un titulo"
+              />
+            </div>
+            <div class="row">
+              <label>Tareas</label>
+              <div class="list">
+                <input
+                  class="task-input"
+                  type="text"
+                  placeholder="Escribe una tarea"
+                />
+                <button type="button" class="add-task-btn">
+                  Agregar tarea
+                </button>
+              </div>
+              <ul class="task-list"></ul>
+            </div>
+            <button class="add-btn"></button>
+          </form>
+        </div>
+      </div>
+    </div>
+    <div class="wrapper">
+      <li class="add-box">
+        <div class="icon"><i class="ri-add-line"></i></div>
+        <p>Agregar nueva Nota</p>
+      </li>
+    </div>
+  </body>
+</html>

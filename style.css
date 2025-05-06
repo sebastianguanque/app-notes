@@ -1,0 +1,357 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+
+body {
+  background-color: #222;
+  color: #fff;
+}
+
+::selection {
+  color: #fff;
+  background: #618cf8;
+}
+
+.popup-box,
+.popup {
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s;
+}
+
+.popup-box.show,
+.popup-box.show .popup {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.popup-box {
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.4);
+  height: 100%;
+  width: 100%;
+  z-index: 2;
+
+  & .popup {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 400px;
+    width: 100%;
+    z-index: 3;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #000;
+
+    & .content {
+      width: calc(100% - 15px);
+      background-color: #fff;
+      border-radius: 4px;
+
+      & header {
+        border-bottom: 1px solid #ccc;
+        padding: 15px 25px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        & p {
+          font-weight: 500;
+          font-size: 20px;
+        }
+
+        & i {
+          cursor: pointer;
+          font-size: 23px;
+          color: #555;
+
+          transition: transform 0.2s;
+          &:hover {
+            transform: rotateZ(-90deg);
+          }
+        }
+      }
+
+      & form {
+        margin: 15px 25px 35px;
+
+        & .list {
+          display: flex;
+        }
+
+        & .row {
+          margin-bottom: 20px;
+
+          & label {
+            font-size: 18px;
+            margin-bottom: 6px;
+          }
+
+          & input[type="text"] {
+            width: 100%;
+            border: 1px solid #999;
+            border-radius: 4px;
+            outline: none;
+            height: 50px;
+            font-size: 16px;
+            padding: 0 15px;
+            margin-right: 5px;
+          }
+        }
+
+        & .tareas {
+          border-bottom: 1px solid #ccc;
+          width: 100%;
+          padding: 10px 0;
+        }
+
+        & .add-btn {
+          width: 100%;
+          height: 50px;
+          background-color: #222;
+          color: #fff;
+          border: none;
+          border-radius: 4px;
+          outline: none;
+          font-size: 17px;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+}
+
+.wrapper {
+  margin: 50px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 100px), 265px));
+  gap: 1rem;
+  place-content: center;
+
+  & .add-box,
+  & .note {
+    height: 250px;
+    list-style: none;
+    background-color: #555;
+    border-radius: 4px;
+    padding: 15px 20px 20px;
+  }
+
+  & .add-box,
+  & .icon,
+  & .bottom-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  & .add-box {
+    cursor: pointer;
+    flex-direction: column;
+    justify-content: center;
+
+    & .icon {
+      justify-content: center;
+
+      font-size: 40px;
+      height: 78px;
+      width: 78px;
+      border-radius: 50%;
+      border: 2px solid #fff;
+      & i {
+        cursor: pointer;
+      }
+    }
+
+    & p {
+      font-weight: 500;
+      margin-top: 20px;
+    }
+  }
+
+  & .note {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+
+    & .details {
+      max-height: 165px;
+      overflow-y: auto;
+
+      & p {
+        font-size: 24px;
+        color: #fff;
+      }
+
+      & ul {
+        & li {
+          height: 38px;
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          padding-right: 8px;
+
+          & label {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            cursor: pointer;
+
+            & p {
+              font-size: 15px;
+              font-weight: 500;
+              color: #bbbbbb;
+            }
+          }
+
+          & i {
+            color: darkred;
+            font-size: 20px;
+            cursor: pointer;
+            transition: transform 0.2s;
+            &:hover {
+              transform: rotateZ(-90deg);
+            }
+          }
+        }
+      }
+    }
+
+    & .bottom-content {
+      padding-top: 8px;
+      border-top: 1px solid #bbb;
+
+      & span {
+        color: lightgray;
+        font-size: 14px;
+      }
+
+      & .settings {
+        position: relative;
+
+        &.show .menu {
+          transform: scale(1);
+        }
+        & i {
+          color: lightgray;
+          font-size: 15px;
+          cursor: pointer;
+        }
+
+        & .menu {
+          position: absolute;
+          bottom: 0;
+          right: -4px;
+          border-radius: 4px;
+          box-shadow: 0 0 6px rgba(0, 0, 0, 0.15);
+          padding: 4px 0;
+          background-color: #222;
+          transform: scale(0);
+          transform-origin: bottom right;
+          transition: transform 0.3s;
+
+          & li {
+            font-size: 16px;
+            cursor: pointer;
+            height: 25px;
+            border-radius: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #222;
+            padding: 17px 15px;
+
+            &:hover {
+              background-color: #444;
+            }
+
+            & i {
+              padding-right: 8px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+/* style.css modificado con estilos para tareas */
+.task-list {
+  width: 100%;
+  list-style: none;
+  padding: 0;
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  & li {
+    width: 100%;
+    display: flex;
+    gap: 10px;
+    padding: 5px 0;
+    font-size: 15px;
+
+    & label {
+      width: 100%;
+      display: flex;
+      gap: 8px;
+
+      & p {
+        cursor: pointer;
+        width: 100%;
+      }
+    }
+
+    & i {
+      color: darkred;
+      font-size: 20px;
+      cursor: pointer;
+    }
+  }
+}
+
+.task-list .task-list input[type="checkbox"] {
+  width: 16px;
+  height: 16px;
+  cursor: pointer;
+}
+
+.task-list .task-list p.completed {
+  text-decoration: line-through;
+  color: #aaa;
+}
+
+.popup-box .row button.add-task-btn {
+  padding: 6px 10px;
+  border: none;
+  background: #4caf50;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.popup-box .row button.add-task-btn:hover {
+  background: #45a049;
+}
+
+/* Asegura que las tareas se vean en la nota */
+.note ul {
+  margin-top: 4px;
+  list-style: disc;
+}
+
+.note ul li {
+  font-size: 14px;
+  margin-bottom: 4px;
+}
