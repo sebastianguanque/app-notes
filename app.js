@@ -1,4 +1,3 @@
-// app.js modificado para incluir una lista de tareas por nota
 const addBox = document.querySelector(".add-box");
 const popupBox = document.querySelector(".popup-box");
 const popupTitle = popupBox.querySelector("header p");
@@ -72,6 +71,7 @@ taskInput.addEventListener("keydown", (e) => {
 function showNotes() {
   if (!notes) return;
   document.querySelectorAll(".note").forEach((li) => li.remove());
+
   notes.forEach((note, id) => {
     if (!note.tasks || !Array.isArray(note.tasks)) return;
 
@@ -92,7 +92,7 @@ function showNotes() {
       )
       .join("");
 
-    let liTag = `<li class="note">
+    let liTag = `<li class="note" data-note-id="${id}">
         <div class="details">
           <p>${note.title}</p>
           <ul>${tasksHtml}</ul>
@@ -100,23 +100,26 @@ function showNotes() {
         <div class="bottom-content">
           <span>${note.date}</span>
           <div class="settings">
-            <i onclick="showMenu(this)" class="ri-more-line"></i>
-            <ul class="menu">
-              <li onclick="updateNote(${id})">
-                <i class="ri-pencil-line"></i>
-                <span>Editar</span>
-              </li>
-
-              <li onclick="deleteNote(${id})">
+              <span onclick="deleteNote(${id})">
                 <i class="ri-delete-bin-line"></i>
-                <span>Eliminar</span>
-              </li>
-            </ul>
+                <span>Eliminar</p>
+              </span>
           </div>
         </div>
       </li>`;
 
     addBox.insertAdjacentHTML("afterend", liTag);
+
+    const noteElem = addBox.nextElementSibling;
+
+    noteElem.addEventListener("click", (e) => {
+      const tag = e.target.tagName.toLowerCase();
+
+      // Evita activar si se hizo clic en p, input, ul, li, i o label
+      if (["p", "input", "ul", "i", "label", "span"].includes(tag)) return;
+
+      updateNote(id);
+    });
   });
 
   document

@@ -237,12 +237,18 @@ body {
 
       & .settings {
         position: relative;
+        cursor: pointer;
 
         &.show .menu {
           transform: scale(1);
         }
+
+        & span {
+          color: darkred;
+          font-weight: bold;
+        }
         & i {
-          color: lightgray;
+          color: darkred;
           font-size: 15px;
           cursor: pointer;
         }
