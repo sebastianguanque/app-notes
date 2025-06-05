@@ -4,6 +4,10 @@
 
 Una aplicación web intuitiva para gestionar notas personales que funcionan como listas de tareas (todo lists). Cada nota permite agregar múltiples ítems que pueden marcarse como completados o eliminarse fácilmente. Ideal para organizar tu día a día de forma simple y visual.
 
+### Link
+
+- Demo: [Link](https://sebastianguanque.github.io/app-notes/)
+
 ---
 
 ## 📚 Tabla de Contenidos
