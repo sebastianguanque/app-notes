@@ -12,15 +12,23 @@ Una aplicación web intuitiva para gestionar notas personales que funcionan como
 
 ## 📚 Tabla de Contenidos
 
-- [Acerca del Proyecto](#-acerca-del-proyecto)
-- [Características](#-características)
-- [Tecnologías Utilizadas](#-tecnologías-utilizadas)
-- [Primeros Pasos](#-primeros-pasos)
-  - [Prerrequisitos](#prerrequisitos)
-  - [Instalación](#instalación)
-- [Uso](#-uso)
-- [Licencia](#-licencia)
-- [Contacto](#-contacto)
+- [🗒️ Lista de Notas](#️-lista-de-notas)
+  - [📝 Descripción](#-descripción)
+    - [Link](#link)
+  - [📚 Tabla de Contenidos](#-tabla-de-contenidos)
+  - [💡 Acerca del Proyecto](#-acerca-del-proyecto)
+  - [✨ Características](#-características)
+  - [🛠️ Tecnologías Utilizadas](#️-tecnologías-utilizadas)
+  - [⚡ Rendimiento Web](#-rendimiento-web)
+  - [🚀 Primeros Pasos](#-primeros-pasos)
+    - [Prerrequisitos](#prerrequisitos)
+    - [Instalación](#instalación)
+  - [🏃 Uso](#-uso)
+    - [Screenshot](#screenshot)
+      - [Desktop](#desktop)
+      - [Mobile:](#mobile)
+  - [📄 Licencia](#-licencia)
+  - [📧 Contacto](#-contacto)
 
 ---
 
@@ -48,6 +56,14 @@ La interfaz es limpia, enfocada y está optimizada para usarse tanto en escritor
 Este proyecto está construido con tecnologías web estándar, lo que lo hace ligero y fácil de ejecutar:
 
 - **Frontend:** HTML5, CSS3, JavaScript
+
+---
+
+## ⚡ Rendimiento Web
+
+La calidad y la eficiencia son fundamentales. A continuación, se presenta un análisis del rendimiento de la aplicación según las métricas de PageSpeed Insights:
+
+![PageSpeed Insights Score](./img/PageSpeed-score.png) Aspecto del informe de PageSpeed Insights con puntuaciones de Rendimiento 100, Accesibilidad 100, Prácticas recomendadas 100 y SEO 100.
 
 ---
 
