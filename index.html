@@ -4,12 +4,21 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link
-      rel="stylesheet"
+      rel="preload"
       href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.2.0/remixicon.min.css"
-      integrity="sha512-MqL4+Io386IOPMKKyplKII0pVW5e+kb+PI/I3N87G3fHIfrgNNsRpzIXEi+0MQC0sR9xZNqZqCYVcC61fL5+Vg=="
+      as="style"
+      onload="this.onload=null;this.rel='stylesheet'"
       crossorigin="anonymous"
-      referrerpolicy="no-referrer"
     />
+    <noscript>
+      <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.2.0/remixicon.min.css"
+        integrity="sha512-MqL4+Io386IOPMKKyplKII0pVW5e+kb+PI/I3N87G3fHIfrgNNsRpzIXEi+0MQC0sR9xZNqZqCYVcC61fL5+Vg=="
+        crossorigin="anonymous"
+        referrerpolicy="no-referrer"
+      />
+    </noscript>
     <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon" />
 
     <meta name="author" content="Sebastián Guanque" />
@@ -104,16 +113,18 @@
               </div>
               <ul class="task-list"></ul>
             </div>
-            <button class="add-btn"></button>
+            <button class="add-btn">Agregar Nota</button>
           </form>
         </div>
       </div>
     </div>
     <div class="wrapper">
-      <li class="add-box">
-        <div class="icon"><i class="ri-add-line"></i></div>
-        <p>Agregar nueva Nota</p>
-      </li>
+      <ul>
+        <li class="add-box">
+          <div class="icon"><i class="ri-add-line"></i></div>
+          <p>Agregar nueva Nota</p>
+        </li>
+      </ul>
     </div>
   </body>
 </html>
